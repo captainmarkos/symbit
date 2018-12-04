@@ -1,0 +1,2 @@
+module HighlighterHelper
+end
