@@ -1,3 +1,13 @@
 // Place all the styles related to the Highlighter controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.symbit-highlighter {
+  .code-to-highlight {
+    width: 715px;
+    height: 500px;
+    font-family: 'Source Code Pro';
+    font-size: 1em;
+    background-color: #e0e0e0;
+  }
+}

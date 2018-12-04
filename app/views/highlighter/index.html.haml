@@ -1,2 +1,34 @@
-%h1 Highlighter#index
-%p Find me in app/views/highlighter/index.html.haml
+:javascript
+  function highlight_request() {
+    var language = document.getElementById('language');
+    val = language.options[language.selectedIndex].value;
+    var url = location.toString().split('?')[0] + '?language=' + val;
+    location.assign(url);
+  }
+
+%div.container.symbit-highlighter
+  %h2 Code Highlighter
+  %hr/
+  %br/
+
+  %div.container
+    = 'Select a language:'
+    = select_tag :language, options_for_language(params[:language])
+    = link_to 'Make it Pretty', highlighter_index_path, class: 'btn btn-primary'
+
+  %br/
+
+  %div.container
+    = text_area_tag :code_to_highlight, nil, class: 'code-to-highlight'
+
+  %br/
+
+  %pre.container.highlight
+    = rouge("def rouge_me\n  puts 'hey!'\nend", 'ruby').html_safe
+
+  %div.container
+    %br/
+    %hr/
+    Syntax highlighting thanks to
+    = link_to 'https://github.com/jneen/rouge', 'https://github.com/jneen/rouge'
+    %br/
