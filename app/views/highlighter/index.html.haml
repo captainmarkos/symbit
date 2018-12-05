@@ -1,9 +1,24 @@
 :javascript
-  function highlight_request() {
-    var language = document.getElementById('language');
-    val = language.options[language.selectedIndex].value;
-    var url = location.toString().split('?')[0] + '?language=' + val;
-    location.assign(url);
+  function rouge_request() {
+    var select_list = document.getElementById('language');
+    var lang = language.options[language.selectedIndex].value;
+
+    var raw_code = $('#code_to_highlight').val();
+    var rouge_url = "#{rouge_highlighter_index_path}";
+
+    $.ajax({
+      method: 'POST',
+      url: rouge_url,
+      data: { text: raw_code, language: lang }
+    })
+    .done(function(response) {
+      console.log('--> response: ', response);
+
+      $('#pretty_code').html(response.highlighted_text);
+    })
+    .fail(function() {
+      alert('$.ajax() failed\nurl: ' + rouge_url);
+    });
   }
 
 %div.container.symbit-highlighter
@@ -14,18 +29,14 @@
   %div.container
     = 'Select a language:'
     = select_tag :language, options_for_language(params[:language])
-    = link_to 'Make it Pretty', highlighter_index_path, class: 'btn btn-primary'
-
-  %br/
-
-  %div.container
+    = button_tag "Make it Pretty", onclick: 'rouge_request();'
+    %br/
     = text_area_tag :code_to_highlight, nil, class: 'code-to-highlight'
 
   %br/
 
   %div.container
-    %pre.container.highlight-github
-      = rouge("def rouge_me\n  puts 'hey!'\nend", 'ruby').html_safe
+    %pre#pretty_code.container.highlight-github{ style: "font-size: 1em; font-family: 'Source Code Pro';" }
 
   %div.container
     %br/
