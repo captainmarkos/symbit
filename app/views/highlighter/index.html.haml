@@ -20,24 +20,25 @@
     });
   }
 
-%div.container.symbit-highlighter
+%div.container-fluid.symbit-highlighter
   %h2 Code Highlighter
   %hr/
+
+  %table.table
+    %tr
+      %td{ colspan: 2 }
+        = 'Select a language:'
+        = select_tag :language, options_for_language(params[:language])
+        = button_tag "Make it Pretty", onclick: 'rouge_request();'
+    %tr
+      %td
+        = text_area_tag :code_to_highlight, nil, class: 'code-to-highlight'
+      %td
+        %pre#pretty_code.highlight-github
+
   %br/
 
-  %div.container
-    = 'Select a language:'
-    = select_tag :language, options_for_language(params[:language])
-    = button_tag "Make it Pretty", onclick: 'rouge_request();'
-    %br/
-    = text_area_tag :code_to_highlight, nil, class: 'code-to-highlight'
-
-  %br/
-
-  %div.container
-    %pre#pretty_code.container.highlight-github{ style: "font-size: 1em; font-family: 'Source Code Pro';" }
-
-  %div.container
+  %div.container-fluid
     %br/
     %hr/
     Syntax highlighting thanks to

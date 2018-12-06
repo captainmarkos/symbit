@@ -5,10 +5,24 @@
 .symbit-highlighter {
   .code-to-highlight {
     margin-top: 16px;
-    width: 715px;
-    height: 500px;
+    width: 600px;
+    height: 450px;
     font-family: 'Source Code Pro';
-    font-size: 1em;
+    font-size: 0.85em;
     background-color: #e0e0e0;
+    overflow: auto;
+    white-space: pre;
+  }
+
+  #pretty_code {
+    font-size: 0.85em;
+    font-family: 'Source Code Pro';
+    margin-top: 16px;
+    width: 600px;
+    height: 450px;
+  }
+
+  .table > tbody > tr > td {
+    border-top: 0px;
   }
 }
