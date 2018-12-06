@@ -13,7 +13,6 @@
     })
     .done(function(response) {
       console.log('--> response: ', response);
-
       $('#pretty_code').html(response.highlighted_text);
     })
     .fail(function() {
