@@ -24,6 +24,12 @@ Things you may want to cover:
 * ...
 
 
+## Highlighted Syntax via curl
+```
+curl --data "text=var foo = function() {\n    console.log('Hello');\n};\n&language=ruby" "http://0.0.0.0:3000/highlighter/rouge"
+
+```
+
 ## Testing
 ```
 bundle exec rspec
