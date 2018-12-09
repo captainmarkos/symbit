@@ -8,7 +8,9 @@ class HighlighterController < ApplicationController
   def rouge
     text = rouge_params[:text]
     language = rouge_params[:language]
-    result = { highlighted_text: rougify(text, language) }
+    Resque.enqueue(CodeStore, language, text)
+
+    result = { highlighted_text: SourceCode.rougify(language, text) }
     render json: result
   end
 
@@ -16,11 +18,5 @@ class HighlighterController < ApplicationController
 
   def rouge_params
     params.permit(:language, :text)
-  end
-
-  def rougify(text, language)
-    formatter = Rouge::Formatters::HTML.new(css_class: 'highlight-github')
-    lexer = Rouge::Lexer.find(language)
-    formatter.format(lexer.lex(text))
   end
 end

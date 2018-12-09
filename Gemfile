@@ -4,8 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.5'
 
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
-gem 'sqlite3'
-#gem 'mysql2'
+gem 'mysql2'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.2.0'
@@ -16,7 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'redis', '~> 4.0'
+#gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -32,7 +31,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rouge'
-gem 'resque'
+gem 'resque', require: 'resque/server'
 #gem 'resque-job-stats'
 
 group :development, :test do
