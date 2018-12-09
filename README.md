@@ -46,7 +46,7 @@ bin/rake resque:work QUEUE='code_store_queue'
 
 ### Highlighted Syntax via curl
 ```
-curl --data "text=var foo = function() {\n    console.log('Hello');\n};\n&language=javascript" "http://0.0.0.0:3000/highlighter/rouge"
+curl "http://0.0.0.0:3000/highlighter/rouge" --data "text=var foo = function() {\n    console.log('Hello');\n};\n&language=javascript"
 
 ```
 
