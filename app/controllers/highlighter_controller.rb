@@ -1,9 +1,7 @@
 class HighlighterController < ApplicationController
   protect_from_forgery with: :null_session
 
-  def index
-
-  end
+  def index; end
 
   def rouge
     text = rouge_params[:text]
