@@ -62,8 +62,8 @@ rubocop
 
 ### References
 
-Syntax Highlighter: [https://github.com/jneen/rouge] (https://github.com/jneen/rouge)
+Syntax Highlighter: [https://github.com/jneen/rouge](https://github.com/jneen/rouge)
 
-Railscast for Resque: [http://railscasts.com/episodes/271-resque?view=asciicast] (http://railscasts.com/episodes/271-resque?view=asciicast)
+Railscast for Resque: [http://railscasts.com/episodes/271-resque?view=asciicast](http://railscasts.com/episodes/271-resque?view=asciicast)
 
-Resque Web Interface: [http://0.0.0.0:3000/resque] (http://0.0.0.0:3000/resque)
+Resque Web Interface: [http://0.0.0.0:3000/resque](http://0.0.0.0:3000/resque)
