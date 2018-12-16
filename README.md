@@ -22,10 +22,14 @@ bundle install
 ```
 
 ### Database Config
-Setup `database.yml` with the database username and password.
+Setup `database.yml` with the database username and password.  Then create the databases.
 ```
 create database symbit;
 create database symbit_test;
+```
+Run database migrations.
+```
+bin/rake db:migrate
 ```
 
 ### Run the app
