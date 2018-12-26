@@ -20,7 +20,11 @@ test:
   password:
 
 production:
-  <<: *default
-  database: symbit
-  username: root
-  password:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: "root"
+  password: "[DB_PASSWORD"
+  database: "[DB_NAME]"
+  socket:   "/cloudsql/[CONNECTION_NAME]"

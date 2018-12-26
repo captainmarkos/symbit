@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.5'
+ruby '2.5.3'
 
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'mysql2'
@@ -33,6 +33,8 @@ gem 'haml-rails'
 gem 'rouge'
 gem 'resque', require: 'resque/server'
 #gem 'resque-job-stats'
+
+gem "appengine", "~> 0.4.6"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,5 +69,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "appengine", "~> 0.4.6"
