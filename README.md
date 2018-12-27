@@ -49,9 +49,14 @@ bin/rake resque:work QUEUE='code_store_queue'
 ```
 
 ### Highlighted Syntax via curl
+`Local`
 ```
 curl "http://0.0.0.0:3000/highlighter/rouge" --data "text=var foo = function() {\n    console.log('Hello');\n};\n&language=javascript"
+```
 
+`Staging`
+```
+curl "http://symbit.appspot.com/highlighter/rouge" --data "text=var foo = function() {\n    console.log('Hello');\n};\n&language=javascript"
 ```
 
 ### Testing
