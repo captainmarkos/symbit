@@ -1,4 +1,14 @@
 :javascript
+
+  $(document).ready(function() {
+    var command = 'curl "http://symbit.appspot.com/highlighter/rouge" ' +
+                  '--data "text=var foo = function() {\\n    console.log(\"Hello\");\\n};\\n' +
+                  '&language=javascript"';
+
+    console.log('--> command: ', command);
+    $('#curl_example').text(command);
+  });
+
   function rouge_request() {
     var select_list = document.getElementById('language');
     var lang = language.options[language.selectedIndex].value;
@@ -12,8 +22,10 @@
       data: { text: raw_code, language: lang }
     })
     .done(function(response) {
-      console.log('--> response: ', response);
+      //console.log('--> response: ', response);
       $('#pretty_code').html(response.highlighted_text);
+      $('#pretty_markup').text(response.highlighted_text);
+      $('#hidden_markup_row').css('display', 'inline');
     })
     .fail(function() {
       alert('$.ajax() failed\nurl: ' + rouge_url);
@@ -21,7 +33,7 @@
   }
 
 %div.container-fluid.symbit-highlighter
-  %h2 Code Highlighter
+  %h2 Code Syntax Highlighter
   %hr/
 
   %table.table
@@ -35,12 +47,29 @@
         = text_area_tag :code_to_highlight, nil, class: 'code-to-highlight'
       %td
         %pre#pretty_code.highlight-github
+    %tr
+      %td{ colspan: 2 }
+        %div#hidden_markup_row
+          = 'Include these styles with the markup below to have your own highlighted code syntax: '
+          = link_to_blank 'https://raw.githubusercontent.com/captainmarkos/symbit/master/app/assets/stylesheets/rouge_github.scss', 'https://raw.githubusercontent.com/captainmarkos/symbit/master/app/assets/stylesheets/rouge_github.scss'
+          = text_area_tag :pretty_markup, nil
+    %tr
+      %td{ colspan: 2 }
+        = 'This POST request can be used and will return the markup.'
+        = 'Use this stylesheet for the markup returned:'
+        %br/
+        = link_to_blank 'https://raw.githubusercontent.com/captainmarkos/symbit/master/app/assets/stylesheets/rouge_github.scss', 'https://raw.githubusercontent.com/captainmarkos/symbit/master/app/assets/stylesheets/rouge_github.scss'
+        %pre#curl_example
 
   %br/
 
   %div.container-fluid
-    %br/
     %hr/
+    %br/
+    Github
+    = link_to 'https://github.com/captainmarkos/symbit', 'https://github.com/captainmarkos/symbit'
+
+    %br/
     Syntax highlighting thanks to
     = link_to 'https://github.com/jneen/rouge', 'https://github.com/jneen/rouge'
     %br/
