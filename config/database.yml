@@ -25,6 +25,6 @@ production:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   username: "root"
-  password: "[DB_PASSWORD"
-  database: "[DB_NAME]"
-  socket:   "/cloudsql/[CONNECTION_NAME]"
+  password: "#{Rails.application.credentials.dbpasswd}"
+  database: "symbit"
+  socket:   "/cloudsql/#{Rails.application.credentials.dbconn_name}"
