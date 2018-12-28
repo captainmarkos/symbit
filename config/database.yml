@@ -6,8 +6,8 @@ default: &default
 
 development:
   <<: *default
-  database: "#{Rails.application.credentials.dbname}"
-  username: "#{Rails.application.credentials.dbuser}"
+  database: <%= Rails.application.credentials.db[:name] %>
+  username: <%= Rails.application.credentials.db[:user] %>
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -16,7 +16,7 @@ development:
 test:
   <<: *default
   database: symbit_test
-  username: "#{Rails.application.credentials.dbuser}"
+  username: <%= Rails.application.credentials.db[:user] %>
   password:
 
 production:
@@ -24,7 +24,7 @@ production:
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: "#{Rails.application.credentials.dbuser}"
-  password: "#{Rails.application.credentials.dbpasswd}"
-  database: "#{Rails.application.credentials.dbname}"
-  socket:   "/cloudsql/#{Rails.application.credentials.dbconn_name}"
+  database: <%= Rails.application.credentials.db[:name] %>
+  username: <%= Rails.application.credentials.db[:user] %>
+  password: <%= Rails.application.credentials.db[:passwd] %>
+  socket:   <%= Rails.application.credentials.db[:connection_name] %>

@@ -3,7 +3,7 @@ env: flex
 runtime: ruby
 
 env_variables:
-  SECRET_KEY_BASE: 81fda3fd8809e18c6a8412498185d442e528b3c3af4a0fcc2e991c7aaf05b81dd5c7affe14157989688902d35b42b7fff8f644e0cd4883c50f5abd753af3404a
+  SECRET_KEY_BASE: 55668c8e93a4df75765b0cb29c9c49b9e618e1669704f7371eb2c565281b074acd5e76697aaf7eeedb8dd10e7747112c8b1b43025afa4473011062af832df77b
 
 beta_settings:
   cloud_sql_instances: symbit:us-central1:rails-cloudsql-instance
