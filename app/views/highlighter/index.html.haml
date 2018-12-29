@@ -55,21 +55,19 @@
           = text_area_tag :pretty_markup, nil
     %tr
       %td{ colspan: 2 }
-        = 'This POST request can be used and will return the markup.'
-        = 'Use this stylesheet for the markup returned:'
+        = 'A POST request will return the markup, see example below.'
         %br/
+        = 'Use this stylesheet for the markup returned:'
         = link_to_blank 'https://raw.githubusercontent.com/captainmarkos/symbit/master/app/assets/stylesheets/rouge_github.scss', 'https://raw.githubusercontent.com/captainmarkos/symbit/master/app/assets/stylesheets/rouge_github.scss'
         %pre#curl_example
 
-  %br/
-
   %div.container-fluid
     %hr/
-    %br/
     Github
     = link_to 'https://github.com/captainmarkos/symbit', 'https://github.com/captainmarkos/symbit'
 
     %br/
     Syntax highlighting thanks to
     = link_to 'https://github.com/jneen/rouge', 'https://github.com/jneen/rouge'
-    %br/
+
+    %div{ style: 'margin: 8px 0 8px 0;' }
