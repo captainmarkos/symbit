@@ -1,4 +1,4 @@
-# README
+# Code Syntax Highlighter - GUI & API Interfaces
 
 ### Ruby version
 ```
