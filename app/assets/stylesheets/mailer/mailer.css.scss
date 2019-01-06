@@ -1,0 +1,52 @@
+.md-header {
+  background: #0eb4c2;
+}
+
+.bd-header {
+    background: #00b085;
+}
+
+.md-logo img {
+        padding-left: -13px;
+        padding-top: 6px;
+}
+
+.bd-logo img {
+    padding-left: -13px;
+    padding-top: 6px;
+}
+
+.email_headers {
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 22px;
+  color: #4c4c4c;
+  border-bottom: solid 2px #d3d3d3;
+}
+
+.email_content {
+  font-size: 16px;
+  color: #4c4c4c;
+}
+
+.email_content h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1aa6b6;
+}
+
+.email_content h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1aa6b6;
+}
+
+.email_content p {
+  padding-top: 8px;
+  line-height: 26px;
+}
+
+.email_content p a {
+  color: #f96c07;
+  text-decoration: underline;
+}

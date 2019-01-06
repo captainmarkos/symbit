@@ -16,6 +16,9 @@ class HighlighterController < ApplicationController
                       source_code: text,
                       highlighted_source_code: highlighted_code)
 
+    # Let someone know we did some work.
+    HighlighterMailer.syntax_highlighted.deliver_later
+
     result = { highlighted_text: SourceCode.rougify(language, text) }
     render json: result
   end
