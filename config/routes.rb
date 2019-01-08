@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'dashboard/index'
 
+  resources :yodatepicker, only: [:index]
+
   mount Resque::Server, at: '/resque'
 
   resources :highlighter, only: [:index] do
