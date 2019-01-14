@@ -1,46 +1,25 @@
 .yo-previous-month, .yo-next-month {
   color: #fff!important;
 }
-.yo-previous-month .fa, .yo-previous-month .fa-chevron-left {
-  display: none !important;
-}
-
-.yo-next-month .fa, .yo-next-month .fa-chevron-right {
-  display: none !important;
-}
 
 .yo-previous-month span {
-  /* content: "\f138"; */
   width: 30px;
   height:30px;
   right: 5px;
   font-family: FontAwesome;
   font-size: 30px;
   color: #000000;
-  /*
-  content: "";
-  background: url('/calendar-arrow-prev.png') no-repeat;
-  height: 30px;
-  width: 60px;
-  left: 5px;
-  */
+  cursor: pointer;
 }
 
 .yo-next-month span {
-  /* content: "\f137"; */
   width: 30px;
   height:30px;
   right: 5px;
   font-family: FontAwesome;
   font-size: 30px;
   color: #000000;
-  /*
-  content: "";
-  background: url('/calendar-arrow-next.png') no-repeat;
-  height: 30px;
-  width: 60px;
-  right: 5px;
-  */
+  cursor: pointer;
 }
 .yo-calendar-title-bar {
     background-color: #fff!important;
