@@ -5,9 +5,9 @@
 
   $(document).ready(function() {
 
-    var activity_calendar = yodatepicker({
-        dp_id_name: 'dp_activity_calendar',
-        id_name: 'activity_datepicker',
+    var activity_calendar_en = yodatepicker({
+        dp_id_name: 'dp_activity_calendar_en',
+        id_name: 'activity_datepicker_en',
         months_to_display: 1,
         use_date_range: false,
         dow_heading: 'short_name',
@@ -17,15 +17,51 @@
         locale: 'en',
 
         // navigation arrow icons and colors
-        prev_fa_class: 'fa fa-chevron-left',
-        next_fa_class: 'fa fa-chevron-right'
+        prev_fa_class: 'fas fa-chevron-circle-left',
+        next_fa_class: 'fas fa-chevron-circle-right'
     });
 
-    activity_calendar.show();
+    var activity_calendar_es = yodatepicker({
+        dp_id_name: 'dp_activity_calendar_es',
+        id_name: 'activity_datepicker_es',
+        months_to_display: 1,
+        use_date_range: false,
+        dow_heading: 'short_name',
+        close_onselect: false,
+        min_date: new Date(),
+        max_date: '1Y',
+        locale: 'es',
+
+        // navigation arrow icons and colors
+        prev_fa_class: 'fas fa-chevron-circle-left',
+        next_fa_class: 'fas fa-chevron-circle-right'
+    });
+
+    var activity_calendar_fr = yodatepicker({
+        dp_id_name: 'dp_activity_calendar_fr',
+        id_name: 'activity_datepicker_fr',
+        months_to_display: 1,
+        use_date_range: false,
+        dow_heading: 'short_name',
+        close_onselect: false,
+        min_date: new Date(),
+        max_date: '1Y',
+        locale: 'fr',
+
+        // navigation arrow icons and colors
+        prev_fa_class: 'fas fa-chevron-circle-left',
+        next_fa_class: 'fas fa-chevron-circle-right'
+    });
+
+    setTimeout(function() {
+      activity_calendar_en.show();
+      activity_calendar_es.show();
+      activity_calendar_fr.show();
+    }, 500);
 
   });
 
-%div.container-fluid.symbit-highlighter
+%div.container-fluid.symbit-yodatepicker
   %center
     %h2 Yodatepicker
     %p Pure Javascrpt Datepicker / Calendar
@@ -33,13 +69,26 @@
   %hr/
 
   %div.container-fluid
-    %div#dp_activity_calendar
-    %br/
-    %div
-      Select a Date:
-      = text_field_tag 'activity_datepicker'
+    %div#dp_activity_calendar_en.calendar-container
+      %br/
+      %div
+        Select a Date:
+        = text_field_tag 'activity_datepicker_en'
 
-  %div.container-fluid
+    %div#dp_activity_calendar_es.calendar-container
+      %br/
+      %div
+        Select a Date:
+        = text_field_tag 'activity_datepicker_es'
+
+    %div#dp_activity_calendar_fr.calendar-container
+      %br/
+      %div
+        Select a Date:
+        = text_field_tag 'activity_datepicker_fr'
+
+  %div.container-fluid.footer
     %hr/
-    Github
+    = image_tag('octobiwan_100x100.png', class: 'octobiwan')
+    = image_tag('GitHub-Logo.png', class: 'github-logo')
     = link_to 'https://github.com/captainmarkos/yodatepicker', 'https://github.com/captainmarkos/yodatepicker'

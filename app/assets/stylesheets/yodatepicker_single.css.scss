@@ -9,22 +9,38 @@
   display: none !important;
 }
 
-/* span#yo-dp_activity_calendar-prev-month-0:after { */
 .yo-previous-month span {
+  /* content: "\f138"; */
+  width: 30px;
+  height:30px;
+  right: 5px;
+  font-family: FontAwesome;
+  font-size: 30px;
+  color: #000000;
+  /*
   content: "";
   background: url('/calendar-arrow-prev.png') no-repeat;
   height: 30px;
   width: 60px;
   left: 5px;
+  */
 }
 
-/* span#yo-dp_activity_calendar-next-month-0:after { */
 .yo-next-month span {
-    content: "";
-    background: url('/calendar-arrow-next.png') no-repeat;
-    height: 30px;
-    width: 60px;
-    right: 5px;
+  /* content: "\f137"; */
+  width: 30px;
+  height:30px;
+  right: 5px;
+  font-family: FontAwesome;
+  font-size: 30px;
+  color: #000000;
+  /*
+  content: "";
+  background: url('/calendar-arrow-next.png') no-repeat;
+  height: 30px;
+  width: 60px;
+  right: 5px;
+  */
 }
 .yo-calendar-title-bar {
     background-color: #fff!important;
@@ -45,8 +61,8 @@
     text-transform: uppercase;
 }
 .yo-content {
-    width: 320px!important;
-    height: 330px!important;
+    width: auto;
+    height: auto;
     border-radius: 8px!important;
     background-color: #ffffff!important;
     box-shadow: 6px 16px 34px 0 rgba(0, 0, 0, 0.12);
@@ -58,8 +74,8 @@
     margin: 0;
     padding: 0;
     border-spacing: 0;
-    width: 320px!important;
-    height: 330px!important;
+    width: auto;
+    height: auto;
     border-radius: 8px!important;
     background-color: #ffffff!important;
 }
