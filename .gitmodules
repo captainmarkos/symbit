@@ -1,3 +1,0 @@
-[submodule "app/assets/javascripts/yodatepicker"]
-	path = app/assets/javascripts/yodatepicker
-	url = git@github.com:captainmarkos/yodatepicker.git
