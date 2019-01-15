@@ -1,14 +1,11 @@
+= content_for :title, 'Symbit - Home of YAY!'
 %div.container-fluid.symbit-dashboard
+
+  = render partial: 'shared/header', locals: {page_title: 'Symbit'}
+
   %div.container-fluid
-    %center
-      %h2 YayPlus1
-      %p Yay for fun stuff!
-    %hr/
     %p= link_to 'Code Syntax Highlighter', 'highlighter'
     %p= link_to 'Yodatepicker Datepicker / Calendar', 'yodatepicker'
 
-  %div.container-fluid.footer
-    %hr/
-    = image_tag('octobiwan_100x100.png', class: 'octobiwan')
-    = image_tag('GitHub-Logo.png', class: 'github-logo')
-    = link_to 'https://github.com/captainmarkos/symbit', 'https://github.com/captainmarkos/symbit'
+  - github_link = 'https://github.com/captainmarkos/symbit'
+  = render partial: 'shared/footer', locals: {github_link: github_link}

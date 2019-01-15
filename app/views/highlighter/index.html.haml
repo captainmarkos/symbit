@@ -32,11 +32,11 @@
     });
   }
 
+= content_for :title, 'Code Syntax Highlighter'
+
 %div.container-fluid.symbit-highlighter
-  %center
-    %h2 Code Syntax Highlighter
-    %p Yay for fun stuff!
-  %hr/
+  - page_title = 'Code Syntax Highlighter'
+  = render partial: 'shared/header', locals: {page_title: page_title}
 
   %table.table
     %tr
@@ -64,12 +64,8 @@
         %pre#curl_example
 
   %div.container-fluid
-    %hr/
-    Github
-    = link_to 'https://github.com/captainmarkos/symbit', 'https://github.com/captainmarkos/symbit'
-
-    %br/
     Syntax highlighting thanks to
     = link_to 'https://github.com/jneen/rouge', 'https://github.com/jneen/rouge'
 
-    %div{ style: 'margin: 8px 0 8px 0;' }
+  - github_link = 'https://github.com/captainmarkos/symbit'
+  = render partial: 'shared/footer', locals: {github_link: github_link}

@@ -11,7 +11,7 @@ module MapboxApi
     #   > JSON.parse(MapboxApi::Wrapper.find_city)
 
     def self.find_city
-      #term = URI.encode(term)
+      # term = URI.encode(term)
       token = Rails.application.credentials.mapbox[:public_token]
 
       base_uri 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json' \
@@ -20,7 +20,7 @@ module MapboxApi
       get('')
     end
 
-    def self.directions_for()
+    def self.directions_for
 
       # Request directions with no additional options
       #

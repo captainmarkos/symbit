@@ -53,20 +53,18 @@
         next_fa_class: 'fas fa-chevron-circle-right'
     });
 
-    setTimeout(function() {
-      activity_calendar_en.show();
-      activity_calendar_es.show();
-      activity_calendar_fr.show();
-    }, 500);
+    activity_calendar_en.show();
+    activity_calendar_es.show();
+    activity_calendar_fr.show();
 
   });
 
+= content_for :title, 'Yodatepicker - Javascript Datepicker / Calendar'
+
 %div.container-fluid.symbit-yodatepicker
-  %center
-    %h2 Yodatepicker
-    %p Pure Javascrpt Datepicker / Calendar
-    %p Yay for fun stuff!
-  %hr/
+  - page_title = 'Yodatepicker'
+  - subtitle = 'Pure Javascrpt Datepicker / Calendar'
+  = render partial: 'shared/header', locals: {page_title: page_title, subtitle: subtitle}
 
   %div.container-fluid
     %div.calendar-container
@@ -90,8 +88,5 @@
         Select a Date:
         = text_field_tag 'activity_datepicker_fr'
 
-  %div.container-fluid.footer
-    %hr/
-    = image_tag('octobiwan_100x100.png', class: 'octobiwan')
-    = image_tag('GitHub-Logo.png', class: 'github-logo')
-    = link_to 'https://github.com/captainmarkos/yodatepicker', 'https://github.com/captainmarkos/yodatepicker'
+  - github_link = 'https://github.com/captainmarkos/yodatepicker'
+  = render partial: 'shared/footer', locals: {github_link: github_link}
