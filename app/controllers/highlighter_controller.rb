@@ -16,8 +16,9 @@ class HighlighterController < ApplicationController
                       source_code: text,
                       highlighted_source_code: highlighted_code)
 
-    # Let someone know we did some work.
-    HighlighterMailer.syntax_highlighted.deliver_later
+    # Fun with a mailer, let someone know we did some work.
+    # Disabled for now because in production google blocks it.
+    # HighlighterMailer.syntax_highlighted.deliver_later
 
     result = { highlighted_text: SourceCode.rougify(language, text) }
     render json: result
