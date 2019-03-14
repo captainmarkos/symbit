@@ -34,8 +34,6 @@ gem 'rouge'
 gem 'resque', require: 'resque/server'
 #gem 'resque-job-stats'
 
-gem "appengine", "~> 0.4.6"
-
 gem 'httparty'
 
 group :development, :test do
