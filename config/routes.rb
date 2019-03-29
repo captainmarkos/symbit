@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :yodatepicker, only: [:index]
 
+  resources :yayplus1, only: [:index]
+
   mount Resque::Server, at: '/resque'
 
   resources :highlighter, only: [:index] do

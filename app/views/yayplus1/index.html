@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8">
+<title>YayPlus1 - Ratings & Reviews</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../assets/javascripts/yayplus1.js"></script>
+<script type="text/javascript">
+  var yay = new YayPlus1();
+
+  $(document).ready(function() {
+
+    yay.ratings_create('yayplus1-ratings');
+
+  });
+</script>
+</head>
+
+<body>
+  <div id="yayplus1-ratings"></div>
+
+</body>
+</html>

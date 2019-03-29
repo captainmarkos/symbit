@@ -1,0 +1,37 @@
+= javascript_include_tag 'yayplus1.js'
+
+:css
+  #yayplus1_0 {
+    cursor: pointer;
+  }
+
+  #yayplus1_1 {
+    cursor: pointer;
+  }
+
+   #yayplus1_2 {
+    cursor: pointer;
+  }
+
+   #yayplus1_3 {
+    cursor: pointer;
+  }
+
+   #yayplus1_4 {
+    cursor: pointer;
+  }
+
+%h2{style: 'text-align: center;'} Yayplus1 Ratings
+%hr
+
+%div#yayplus1-ratings
+
+:javascript
+
+  var ratings = new YayPlus1();
+
+  $(document).ready(function() {
+
+    ratings.create('yayplus1-ratings', 5);
+
+  });

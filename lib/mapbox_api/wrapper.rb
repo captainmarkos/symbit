@@ -14,14 +14,15 @@ module MapboxApi
       # term = URI.encode(term)
       token = Rails.application.credentials.mapbox[:public_token]
 
-      base_uri 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json' \
-               "?access_token=#{token}"
+      url = 'https://api.mapbox.com/geocoding/v5/mapbox.places' \
+            '/Los%20Angeles.json' \
+            "?access_token=#{token}"
+      base_uri url
 
       get('')
     end
 
     def self.directions_for
-
       # Request directions with no additional options
       #
       #   curl "https://api.mapbox.com/directions/v5/mapbox/cycling/START_LON,START_LAT,END_LON,END_LAT
@@ -64,8 +65,7 @@ GET /v4/{map_id}/{zoom}/{x}/{y}{@2x}.{format}
 Latitude & Longitude to x & y
 n = 2 ^ zoom
 xtile = n * ((lon_deg + 180) / 360)
-ytile = n * (1 - (log(tan(lat_rad) + sec(lat_rad)) / π)) / 2
-
+ytile = n * (1 - (log(tan(lat_rad) + sec(lat_rad)) / pi)) / 2
 
 =end
   end
