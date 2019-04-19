@@ -79,3 +79,9 @@ Syntax Highlighter: [https://github.com/jneen/rouge](https://github.com/jneen/ro
 Railscast for Resque: [http://railscasts.com/episodes/271-resque?view=asciicast](http://railscasts.com/episodes/271-resque?view=asciicast)
 
 Resque Web Interface: [http://0.0.0.0:3000/resque](http://0.0.0.0:3000/resque)
+
+
+url = git@github.com:captainmarkos/yodatepicker.git 
+
+
+
