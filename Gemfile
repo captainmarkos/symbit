@@ -9,7 +9,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.4.1'
 
-gem 'railties'
+gem 'railties', '~> 5.0', '>= 5.0.0.1'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'mini_racer', platforms: :ruby
