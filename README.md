@@ -80,8 +80,8 @@ Railscast for Resque: [http://railscasts.com/episodes/271-resque?view=asciicast]
 
 Resque Web Interface: [http://0.0.0.0:3000/resque](http://0.0.0.0:3000/resque)
 
-Heroku Mods
------------
+### Heroku Mods
+
 Change:
 url = git@github.com:captainmarkos/yodatepicker.git 
 
@@ -89,7 +89,18 @@ To:
 url = https://github.com/captainmarkos/yodatepicker.git 
 
 Precompile Assets
-RAILS_ENV=production rails assets:precompile --trace
+`RAILS_ENV=production rails assets:precompile --trace`
 
 Create Procfile.txt
 https://devcenter.heroku.com/articles/procfile
+
+To set ENV ['RAILS_MASTER_KEY']:
+```
+heroku config:set RAILS_MASTER_KEY=`cat config/master.key`
+```
+
+Migrate Database
+`heroku run rake db:migrate`
+
+Run rails console
+`heroku run rails console`

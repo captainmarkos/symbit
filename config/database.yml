@@ -24,7 +24,9 @@ production:
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  database: <%= Rails.application.credentials.db[:name] %>
-  username: <%= Rails.application.credentials.db[:user] %>
-  password: <%= Rails.application.credentials.db[:passwd] %>
-  socket:   <%= Rails.application.credentials.db[:connection_name] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+  #database: <%= Rails.application.credentials.db[:name] %>
+  #username: <%= Rails.application.credentials.db[:user] %>
+  #password: <%= Rails.application.credentials.db[:passwd] %>
+  #socket:   <%= Rails.application.credentials.db[:connection_name] %>
