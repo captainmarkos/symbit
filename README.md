@@ -96,7 +96,7 @@ https://devcenter.heroku.com/articles/procfile
 
 To set ENV ['RAILS_MASTER_KEY']:
 ```
-heroku config:set RAILS_MASTER_KEY=`cat config/master.key`
+heroku config:set RAILS_MASTER_KEY=`cat path_to/master.key`
 ```
 
 Migrate Database
