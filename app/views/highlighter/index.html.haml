@@ -1,7 +1,9 @@
 :javascript
 
+  var BASE_URL = 'https://salty-everglades-63319.herokuapp.com/';
+
   $(document).ready(function() {
-    var command = 'curl "http://symbit.appspot.com/highlighter/rouge" ' +
+    var command = 'curl "https://salty-everglades-63319.herokuapp.com/highlighter/rouge" ' +
                   '--data "text=var foo = function() {\\n    console.log(\"Hello\");\\n};\\n' +
                   '&language=javascript"';
 
@@ -9,12 +11,18 @@
     $('#curl_example').text(command);
   });
 
-  function rouge_request() {
+  function rouge_request(prod_env) {
     var select_list = document.getElementById('language');
     var lang = language.options[language.selectedIndex].value;
 
     var raw_code = $('#code_to_highlight').val();
     var rouge_url = "#{rouge_highlighter_index_path}";
+
+    if(prod_env || prod_env === 'true') {
+        rouge_url = BASE_URL + "#{rouge_highlighter_index_path}"
+    }
+
+    console.log('--> rouge_url: ', rogue_url);
 
     $.ajax({
       method: 'POST',
@@ -41,9 +49,10 @@
   %table.table
     %tr
       %td{ colspan: 2 }
+        - prod_env = Rails.env.production?
         = 'Select a language:'
         = select_tag :language, options_for_language(params[:language])
-        = button_tag "Make it Pretty", onclick: 'rouge_request();'
+        = button_tag "Make it Pretty", onclick: "rouge_request(#{prod_env});"
     %tr
       %td
         = text_area_tag :code_to_highlight, nil, class: 'code-to-highlight'
