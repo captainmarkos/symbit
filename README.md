@@ -44,10 +44,6 @@ bin/rake resque:work QUEUE='code_store_queue'
 
 ### Run the app
 ```
-bundle exec passenger start
-
-bundle exec passenger start --port 4000
-
 rails server
 ```
 Hit the front-end with: `http://0.0.0.0:3000/highlighter`

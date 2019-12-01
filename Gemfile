@@ -5,6 +5,7 @@ ruby '2.5.3'
 
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'mysql2', '~> 0.5.2'
+gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.4.1'
 
@@ -38,8 +39,6 @@ gem 'resque', require: 'resque/server'
 #gem 'resque-job-stats'
 
 gem 'httparty'
-
-gem 'passenger'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
