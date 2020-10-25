@@ -12,7 +12,13 @@ redis_options = YAML.load(
   ).result
 )[Rails.env]
 
-R = Redis.new(redis_options)
+if ENV['REDIS_URL'].present?
+  uri = URI.parse(ENV["REDIS_URL"])
+  R = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+else
+  R = Redis.new(redis_options)
+end
+
 #end
 
 
