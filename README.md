@@ -60,11 +60,6 @@ Hit the front-end with: `http://0.0.0.0:3000/highlighter`
 curl "http://0.0.0.0:3000/highlighter/rouge" --data "text=var foo = function() {\n    console.log('Hello');\n};\n&language=javascript"
 ```
 
-`Staging`
-```
-curl "http://symbit.appspot.com/highlighter/rouge" --data "text=var foo = function() {\n    console.log('Hello');\n};\n&language=javascript"
-```
-
 ### Testing
 ```
 bundle exec rspec

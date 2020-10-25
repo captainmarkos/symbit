@@ -1,18 +1,18 @@
-Documentation:
+Style/Documentation:
   Enabled: false
-Alias:
+Style/Alias:
   Enabled: false
-HasAndBelongsToMany:
+#HasAndBelongsToMany:
+#  Enabled: false
+Style/DoubleNegation:
   Enabled: false
-DoubleNegation:
-  Enabled: false
-MethodLength:
+Metrics/MethodLength:
   Enabled: true
   Max: 20
-ClassLength:
+Metrics/ClassLength:
   Enabled: true
   Max: 150
-AbcSize:
+Metrics/AbcSize:
   Enabled: false
   Max: 20
 Style/GuardClause:
@@ -34,6 +34,7 @@ AllCops:
     - config/**/*
     - bin/*
     - script/*
+    - vendor/**/*
 Style/CollectionMethods:
   # Mapping from undesired method to desired_method
   # e.g. to use `detect` over `find`:

@@ -1,3 +1,4 @@
+# rubocop: disable Layout/LineLength
 module MapboxApi
   class Wrapper
     include HTTParty
@@ -42,7 +43,7 @@ module MapboxApi
       # radians = degrees * Math::PI / 180
       # degrees = radians * 180 / Math.PI
       lat_rad = (lat_deg * Math::PI) / 180
-      n = 2.0 ** zoom
+      n = 2.0**zoom # zoom is the exponent
       xtile = ((lon_deg + 180.0) / 360.0 * n).to_i
       ytile = ((1.0 - Math.log(Math.tan(lat_rad) + (1 / Math.cos(lat_rad))) / Math::PI) / 2.0 * n).to_i
       [xtile, ytile]
@@ -51,22 +52,19 @@ module MapboxApi
     #
     # curl "https://api.mapbox.com/v4/mapbox.mapbox-streets-v7/2/2/3.png32?access_token=pk.eyJ1IjoiY2FwdGFpbm1hcmtvcyIsImEiOiJjanBzamdvNDAwY2lrNDhzZHhjYXFwdGtzIn0.FVZ_hvyuRvkDvTT07Pi5iw" > test.png
 
-=begin
+    # curl "https://api.mapbox.com/v4/mapbox.mapbox-terrain-v2/1/0/0@2x.png?access_token=pk.eyJ1IjoiY2FwdGFpbm1hcmtvcyIsImEiOiJjanBzamdvNDAwY2lrNDhzZHhjYXFwdGtzIn0.FVZ_hvyuRvkDvTT07Pi5iw"
 
-curl "https://api.mapbox.com/v4/mapbox.mapbox-terrain-v2/1/0/0@2x.png?access_token=pk.eyJ1IjoiY2FwdGFpbm1hcmtvcyIsImEiOiJjanBzamdvNDAwY2lrNDhzZHhjYXFwdGtzIn0.FVZ_hvyuRvkDvTT07Pi5iw"
+    # curl "https://api.mapbox.com/v4/mapbox.mapbox-streets-v7/3/1/3.png?style=mapbox://styles/mapbox/streets-v10&access_token=pk.eyJ1IjoiY2FwdGFpbm1hcmtvcyIsImEiOiJjanBzamdvNDAwY2lrNDhzZHhjYXFwdGtzIn0.FVZ_hvyuRvkDvTT07Pi5iw"
 
-curl "https://api.mapbox.com/v4/mapbox.mapbox-streets-v7/3/1/3.png?style=mapbox://styles/mapbox/streets-v10&access_token=pk.eyJ1IjoiY2FwdGFpbm1hcmtvcyIsImEiOiJjanBzamdvNDAwY2lrNDhzZHhjYXFwdGtzIn0.FVZ_hvyuRvkDvTT07Pi5iw"
+    # 15 is the zoom in the below url:
+    # https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-104.674598,34.9409072,15,0.00,0.00/1000x600@2x?access_token=pk.eyJ1IjoiY2FwdGFpbm1hcmtvcyIsImEiOiJjanBzamdvNDAwY2lrNDhzZHhjYXFwdGtzIn0.FVZ_hvyuRvkDvTT07Pi5iw
 
-# 15 is the zoom in the below url:
-https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/-104.674598,34.9409072,15,0.00,0.00/1000x600@2x?access_token=pk.eyJ1IjoiY2FwdGFpbm1hcmtvcyIsImEiOiJjanBzamdvNDAwY2lrNDhzZHhjYXFwdGtzIn0.FVZ_hvyuRvkDvTT07Pi5iw
+    # GET /v4/{map_id}/{zoom}/{x}/{y}{@2x}.{format}
 
-GET /v4/{map_id}/{zoom}/{x}/{y}{@2x}.{format}
-
-Latitude & Longitude to x & y
-n = 2 ^ zoom
-xtile = n * ((lon_deg + 180) / 360)
-ytile = n * (1 - (log(tan(lat_rad) + sec(lat_rad)) / pi)) / 2
-
-=end
+    # Latitude & Longitude to x & y
+    # n = 2 ^ zoom
+    # xtile = n * ((lon_deg + 180) / 360)
+    # ytile = n * (1 - (log(tan(lat_rad) + sec(lat_rad)) / pi)) / 2
   end
 end
+# rubocop: enable Layout/LineLength
