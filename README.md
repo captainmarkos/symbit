@@ -9,7 +9,7 @@ ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-darwin17]
 ### Rails version
 ```
 rails -v
-Rails 5.2.1.1
+Rails 5.2.4.4
 ```
 
 ### Dependencies
