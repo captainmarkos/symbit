@@ -7,14 +7,15 @@ class HighlighterController < ApplicationController
     text = rouge_params[:text]
     language = rouge_params[:language]
 
-    # Use a background job and save to the database.
-    Resque.enqueue(CodeStore, language, text)
+    # For now, let's not use a background job and just save to the database.
+    # If and when we get redis setup then we can enable this.
+    # Resque.enqueue(CodeStore, language, text)
 
     highlighted_code = SourceCode.rougify(language, text)
 
-    #SourceCode.create(language: language,
-    #                  source_code: text,
-    #                  highlighted_source_code: highlighted_code)
+    SourceCode.create(language: language,
+                      source_code: text,
+                      highlighted_source_code: highlighted_code)
 
     # Fun with a mailer, let someone know we did some work.
     # Disabled for now because in production google blocks it.
