@@ -33,7 +33,7 @@ bin/rake db:migrate
 ```
 
 ### Redis Config
-[README.redis](https://github.com/captainmarkos/symbit/blob/master/README.redis)
+[README-redis.md](https://github.com/captainmarkos/symbit/blob/master/README-redis.md)
 
 ### Services
 Start up the Resque worker(s). To do so we need to pass in a QUEUE argument.
