@@ -102,3 +102,8 @@ Migrate Database
 
 Run rails console
 `heroku run rails console`
+
+Logs
+`heroku logs --tail`
+
+

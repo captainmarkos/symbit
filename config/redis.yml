@@ -25,11 +25,9 @@ test:
   timeout: 60
 
 production:
-  url: redis://h:pe6435ee1f6b0a2f972c3ed3f54fe17dc4e2c5d26047d59e4366e714f41978163@ec2-34-202-220-94.compute-1.amazonaws.com:22469
+  url: redis://h:p41a9009364372e895a3a4d5775a94010d7ce4ea1b57bc5360130178f6ef83027@ec2-54-161-255-142.compute-1.amazonaws.com:20429
 
-  #host: "ec2-34-202-220-94.compute-1.amazonaws.com"
-  #port:     22469
+  host: "ec2-54-161-255-142.compute-1.amazonaws.com"
+  #port: 20429
   #user: h
-  #password: pe6435ee1f6b0a2f972c3ed3f54fe17dc4e2c5d26047d59e4366e714f41978163
-  #thread_safe: true
-  #timeout: 60
+  password: p41a9009364372e895a3a4d5775a94010d7ce4ea1b57bc5360130178f6ef83027
