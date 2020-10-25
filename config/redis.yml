@@ -25,8 +25,9 @@ test:
   timeout: 60
 
 production:
-  host: <%= ENV['REDIS_HOST'] || "ec2-34-202-220-94.compute-1.amazonaws.com" %>
+  host: "ec2-34-202-220-94.compute-1.amazonaws.com"
   port:     22469
+  user: h
   password: pe6435ee1f6b0a2f972c3ed3f54fe17dc4e2c5d26047d59e4366e714f41978163
   thread_safe: true
   timeout: 60
