@@ -1,0 +1,31 @@
+#default: &default
+#  url: redis://localhost:6379
+#  db: 0
+
+#development:
+#  <<: *default
+
+#test:
+#  <<: *default
+
+#production:
+#  <<: *default
+#  url: redis://somehost:6379
+
+development:
+  host: <%= ENV['REDIS_HOST'] || "localhost" %>
+  port: 6379
+  thread_safe: true
+  timeout: 60
+
+test:
+  host: <%= ENV['REDIS_HOST'] || "localhost" %>
+  port: 6379
+  thread_safe: true
+  timeout: 60
+
+production:
+  host: <%= ENV['REDIS_HOST'] || "localhost" %>
+  port: 6379
+  thread_safe: true
+  timeout: 60
