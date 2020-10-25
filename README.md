@@ -107,3 +107,13 @@ Logs
 `heroku logs --tail`
 
 
+```
+> heroku addons | grep heroku-redis
+7:heroku-redis (redis-defined-93899)  hobby-dev  free   created
+
+heroku addons:create heroku-redis:hobby-dev -a symbit
+
+heroku config | grep REDIS
+
+heroku logs -t
+heroku logs -s redis -t
