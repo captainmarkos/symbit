@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'dashboard/index'
 
   resources :quizzes, only: [:index]
+  resources :qnas
+  resources :tags
 
   resources :yodatepicker, only: [:index]
 

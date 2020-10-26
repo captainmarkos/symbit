@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_170955) do
+ActiveRecord::Schema.define(version: 2020_10_26_235340) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 2020_10_25_170955) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "qnas", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "question"
+    t.string "answer_1"
+    t.string "answer_2"
+    t.string "answer_3"
+    t.string "answer_4"
+    t.string "answer_5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "correct_answer"
+  end
+
   create_table "quizzes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
     t.text "json"
@@ -47,6 +59,21 @@ ActiveRecord::Schema.define(version: 2020_10_25_170955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["language"], name: "index_source_codes_on_language"
+  end
+
+  create_table "tag_targets", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.string "target_type"
+    t.bigint "target_id"
+    t.index ["tag_id"], name: "index_tag_targets_on_tag_id"
+    t.index ["target_type", "target_id"], name: "tag_target_index"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

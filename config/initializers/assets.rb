@@ -15,4 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'javas
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 Rails.application.config.assets.precompile += %w( mailer/mailer.css )
-Rails.application.config.assets.precompile += %w( yodatepicker/dist/yodatepicker.js yayplus1.js )
+Rails.application.config.assets.precompile += %w( yodatepicker/dist/yodatepicker.js yayplus1.js inline_update.js )

@@ -1,0 +1,47 @@
+%script{ type: 'text/javascript' }
+  :plain
+    var refresh_image = function() {
+      location.reload();
+    };
+
+%div.container-fluid
+  %div.row.row-content
+    %div.col-12.col-sm-12
+      %div.table
+
+        %table.table.table-striped
+          %thead.thead-dark
+            %tr
+              %th
+              %th= 'ID'
+              %th= 'IMAGE'
+              %th= 'QUESTION'
+              %th= 'ANSWER 1'
+              %th= 'ANSWER 2'
+              %th= 'ANSWER 3'
+              %th= 'ANSWER 4'
+          %tbody
+            - @qnas.each do |qna|
+              %tr
+                %td= link_to 'Delete', qna_path(id: qna.id), method: :delete
+                %td= qna.id
+
+                %td{ style: 'text-align: center;' }
+                  - # binding.pry
+                  - if qna.images.attached?
+                    = image_tag qna.images.first, style: 'max-width: 120px; max-height: 80px;'
+                  - else
+                    = image_tag '/assets/octobiwan.png', style: 'max-width: 120px; max-height: 80px;'
+                  %br
+                  = form_with(scope: :qna, model: qna, :html => { id: qna.id, onsubmit: "refresh_image();" } ) do |f|
+                    = f.file_field :images, { id: "qna_image_#{qna.id}", accept: 'image/png,image/gif,image/jpeg,image/jpg' }
+                    = f.button 'Save', { class: 'btn btn-primary btn-sm' }
+
+                %td= text_field_tag 'qna[question]', qna.question, class: 'form-control inline-update', 'data-path' => qna_path(id: qna.id)
+                %td= text_field_tag 'qna[answer_1]', qna.answer_1, class: 'form-control inline-update', 'data-path' => qna_path(id: qna.id)
+                %td= text_field_tag 'qna[answer_2]', qna.answer_2, class: 'form-control inline-update', 'data-path' => qna_path(id: qna.id)
+                %td= text_field_tag 'qna[answer_3]', qna.answer_3, class: 'form-control inline-update', 'data-path' => qna_path(id: qna.id)
+                %td= text_field_tag 'qna[answer_4]', qna.answer_4, class: 'form-control inline-update', 'data-path' => qna_path(id: qna.id)
+
+
+

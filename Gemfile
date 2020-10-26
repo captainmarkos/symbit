@@ -7,7 +7,8 @@ gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'mysql2', '~> 0.5.2'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass', '>= 3.4.1'
+#gem 'bootstrap-sass', '>= 3.4.1'
+gem 'bootstrap', '~> 5.0.0.alpha1'
 
 gem 'railties', '~> 5.0', '>= 5.0.0.1'
 
@@ -33,6 +34,7 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'haml-rails'
 gem 'rouge'
 gem 'resque', require: 'resque/server'

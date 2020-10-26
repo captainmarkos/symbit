@@ -1,3 +1,30 @@
 // Place all the styles related to the Quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$color-green: #00FF00;
+$color-teal: #40E0D0;
+$color-light-teal: #9CF4E5;
+$color-alt-teal: #10C8CD;
+
+$color-orange: #FFAE42;
+$color-alt-orange: #FDA50F;
+
+
+$color-dark-gray: #808080;
+$color-gray: #BEBEBE;
+$color-light-gray: #D3D3D3;
+
+h3 { color: $color-teal; }
+
+a {
+  color: $color-orange !important;
+}
+
+.col-form-label {
+  /* color: $color-orange; */
+}
+
+.container-fluid {
+  background-color: $color-dark-gray;
+}
