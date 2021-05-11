@@ -1,2 +1,26 @@
-%h1 Quizzes#index
-%p Find me in app/views/quizzes/index.html.haml
+%div.container-fluid
+  %div.row.row-header
+    %div.col-lg-4.col-md-6.col-sm-12
+      %h3= 'Question and Answers'
+
+%div.container-fluid
+  %div.row.row-content
+    = form_with(scope: :quiz, model: @quiz, class: 'form-inline') do |f|
+
+      %div.form-group.row.mt-4
+        %div.col-lg-4.col-md-6.col-sm-12
+          %label.sr-only{ for: 'question'}= 'Question'
+          = f.text_area :question, { class: 'form-control', 'placeholder' => 'Question' }
+
+        %div.col-lg-4.col-md-6.col-sm-12
+          %label.sr-only{ for: 'images'}
+          - if @qna.present? && @qna.images.attached?
+            = image_tag @qna.images.first, style: 'max-width: 120px; max-height: 80px;'
+          - else
+            = image_tag '/assets/octobiwan.png', style: 'max-width: 120px; max-height: 80px;'
+          = f.file_field :images, accept: 'image/png,image/gif,image/jpeg,image/jpg'
+
+      %div.form-group.row.mt-4
+        %div.col-lg-4.col-md-6.col-sm-12
+          %label.sr-only{ for: 'answer_1'}= 'Answer 1'
+          = f.text_area :answer_1, { class: 'form-control', 'placeholder' => 'Answer 1' }
