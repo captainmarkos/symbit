@@ -5,7 +5,7 @@ ruby '2.7.6'
 
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'mysql2', '~> 0.5.2'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'sass-rails', '~> 5.0'
 #gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bootstrap', '~> 5.0.0.alpha1'
